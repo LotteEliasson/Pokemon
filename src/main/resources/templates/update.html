@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Pokemon</title>
+  <link rel="stylesheet" href="../static/create.css" th:href="@{/create.css}">
+</head>
+<body>
+<div class="container">
+  <h1>Update Pokemon</h1>
+  <table class="deco">
+
+    <form action="/update" method="post">
+
+      <label for="number-field">Pokedex Number:</label>
+      <input id="number-field" name="Pokedex-number" type="hidden" th:value="${pokemon.pokedex_number}"> <br>
+
+      <label for="name-field">Pokemon name:</label>
+      <input id="name-field" name="name" type="text" th:value="${pokemon.name}"> <br>
+
+      <label for="speed-field">Pokemon Speed:</label>
+      <input id="speed-field" name="Speed" type="number" th:value="${pokemon.speed}"><br>
+
+      <label for="specialDefence-field">Pokemon Special Defence</label>
+      <input id="specialDefence-field" name="Special-defence" type="text" th:value="${pokemon.special_defence}"> <br>
+
+      <label for="specialAttack-field">Pokemon Special Attack:</label>
+      <input id="specialAttack-field" name="Special-attack" type="text" th:value="${pokemon.special_attack}"> <br>
+
+      <label for="defence-field">Pokemon Defence:</label>
+      <input id="defence-field" name="Defence" type="text" th:value="${pokemon.defence}"> <br>
+
+      <label for="attack-field">Pokemon Attack:</label>
+      <input id="attack-field" name="Attack" type="text" th:value="${pokemon.attack}"> <br>
+
+      <label for="hp-field">Pokemon Hit Point:</label>
+      <input id="hp-field" name="HP" type="text" th:value="${pokemon.hp}"> <br>
+
+      <label for="primaryType-field">Pokemon Primary Type:</label>
+      <input id="primaryType-field" name="Primary-type" type="text" th:value="${pokemon.primary_type}"> <br>
+
+      <label for="secondaryType-field">Pokemon Secondary Type:</label>
+      <input id="secondaryType-field" name="Secondary-type" type="text" th:value="${pokemon.secondary_type}">
+
+      <input type="submit" value="Create">
+      </tr>
+    </form>
+  </table>
+
+
+
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Pokemon</title>
+    <link rel="stylesheet" href="../static/create.css" th:href="@{/create.css}">
+</head>
+<body>
+  <div class="container">
+    <h1>Create new Pokemon</h1>
+    <table class="deco">
+      <form action="create" method="post">
+
+          <label for="number-field">Pokedex Number:</label>
+          <input id="number-field" name="Pokedex-number" type="text"> <br>
+
+          <label for="name-field">Pokemon name:</label>
+          <input id="name-field" name="Pokemon-name" type="text"> <br>
+
+          <label for="speed-field">Pokemon Speed:</label>
+          <input id="speed-field" name="Speed" type="number"><br>
+
+          <label for="specialDefence-field">Pokemon Special Defence</label>
+          <input id="specialDefence-field" name="Special-defence" type="text"> <br>
+
+          <label for="specialAttack-field">Pokemon Special Attack:</label>
+          <input id="specialAttack-field" name="Special-attack" type="text"> <br>
+
+          <label for="defence-field">Pokemon Defence:</label>
+          <input id="defence-field" name="Defence" type="text"> <br>
+
+          <label for="attack-field">Pokemon Attack:</label>
+          <input id="attack-field" name="Attack" type="text"> <br>
+
+          <label for="hp-field">Pokemon Hit Point:</label>
+          <input id="hp-field" name="HP" type="text"> <br>
+
+          <label for="primaryType-field">Pokemon Primary Type:</label>
+          <input id="primaryType-field" name="Primary-type" type="text"> <br>
+
+          <label for="secondaryType-field">Pokemon Secondary Type:</label>
+          <input id="secondaryType-field" name="Secondary-type" type="text"> <br>
+
+          <input type="submit" value="Create"><br>
+      </form>
+    </table>
+
+
+
+
+  </div>
+
+
+</body>
+</html>
