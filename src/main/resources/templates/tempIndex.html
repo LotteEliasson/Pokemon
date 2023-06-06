@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Pokemon</title>
+  <link rel="stylesheet" href="../static/index.css" th:href="@{index.css}">
+  <link rel="icon" type="image/x-icon" th:href="@{/pokemon_image.png}" href="../static/pokemon_image.png">
+</head>
+<body >
+
+<div class="container">
+  <div>
+    <h1>Pokemonliste</h1>
+  </div>
+  <div class="topnav">
+    <ul>
+      <li><a  th:href="@{/index}" href="/index.html">Pokemon List</a></li>
+      <li><a  th:href="@{/create}" href="/create.html">Create Pokemon</a></li>
+      <li><a  th:href="@{/login}" href="/login.html">Login</a></li>
+    </ul>
+  </div>
+  <table class="deco">
+    <thead id="deco">
+    <th>Pokemon image</th>
+    <th>Pokedex Number</th>
+    <th>Name</th>
+    <th>Speed</th>
+    <th>Special Defence</th>
+    <th>Special Attack</th>
+    <th>Defence</th>
+    <th>Attack</th>
+    <th>Hit Point</th>
+    <th>Primary Type</th>
+    <th>Secondary Type</th>
+    <th>Update Pokemon</th>
+    <th>Delete Pokemon</th>
+    </thead>
+
+    <tbody>
+    <tr th:each="pokemon : ${pokemons}">
+      <td><img th:src="@{'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + ${pokemon.pokedex_number} + '.png'}"></td>
+      <td th:text="${pokemon.pokedex_number}"></td>
+      <td th:text="${pokemon.name}"></td>
+      <td th:text="${pokemon.speed}"></td>
+      <td th:text="${pokemon.special_defence}"></td>
+      <td th:text="${pokemon.special_attack}"></td>
+      <td th:text="${pokemon.defence}"></td>
+      <td th:text="${pokemon.attack}"></td>
+      <td th:text="${pokemon.hp}"></td>
+      <td th:text="${pokemon.primary_type}"></td>
+      <td th:text="${pokemon.secondary_type}"></td>
+      <td>
+        <a th:href="@{'/update/' + ${pokemon.pokedex_number}}" href="/update">Update</a>
+      </td>
+      <td>
+        <a th:href="@{'/delete/' + ${pokemon.pokedex_number}}" href="/delete">Delete</a>
+      </td>
+    </tr>
+
+    </tbody>
+
+  </table>
+
+</div>
+
+</body>
+</html>

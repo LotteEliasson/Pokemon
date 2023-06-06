@@ -1,6 +1,7 @@
 
 body {
-        background-color: #eca2f8;
+    background-color: #eca2f8;
+    margin: 0px;
 }
 
 .container {
@@ -16,7 +17,7 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
-    height:45px;
+    height:120px;
     overflow: hidden;
     background-color: #eca2f8;
     position: sticky;
@@ -33,6 +34,7 @@ body {
     padding: 0;
     margin-bottom: 0px;
     margin-top: 0px;
+
 }
 
 #contact {
@@ -41,7 +43,9 @@ body {
 }
 
 li {
-    float: left;
+
+    display: inline-block;
+    align-items: center;
 }
 
 li a {
@@ -50,7 +54,7 @@ li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 20px;
+    padding: 70px 50px;
     text-decoration: none;
 }
 
@@ -87,12 +91,95 @@ th {
     box-shadow: 0px 0px 0px 0px black;
 
 }
- #deco {
-     padding: 3px;
-     border: solid 1px;
-     border-collapse: collapse;
- }
 
  h1 {
      text-align: center;
  }
+
+/*.body-container {*/
+/*    box-shadow: inset 0 0 10px #333;*/
+/*    height:100%;*/
+/*    font-size:15px;*/
+/*    padding-top: 1px;*/
+/*}*/
+.pokemoncard {
+    height:50%;
+    width:12%;
+    border:1px solid black;
+    border-radius:5px;
+    box-shadow: 5px 10px 5px grey;
+    float:left;
+    margin:1% 0 0 1%;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    background-color: #eed2fc;
+}
+span {
+    text-align: left;
+}
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+    50%,100% {
+        left: 100%;
+    }
+}
+
+.pokemoncard  a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+    0% {
+        top: -100%;
+    }
+    50%,100% {
+        top: 100%;
+    }
+}
+
+.pokemoncard  a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+    0% {
+        right: -100%;
+    }
+    50%,100% {
+        right: 100%;
+    }
+}
+
+.pokemoncard  a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+    0% {
+        bottom: -100%;
+    }
+    50%, 100% {
+        bottom: 100%;
+    }
+}

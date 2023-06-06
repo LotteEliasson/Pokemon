@@ -7,61 +7,41 @@
     <link rel="stylesheet" href="../static/index.css" th:href="@{index.css}">
     <link rel="icon" type="image/x-icon" th:href="@{/pokemon_image.png}" href="../static/pokemon_image.png">
 </head>
-<body >
+<body>
 
 <div class="container">
     <div>
-    <h1>Pokemonliste</h1>
+    <h1>Pokemon Cards</h1>
     </div>
     <div class="topnav">
         <ul>
-            <li><a  th:href="@{/index}" href="/index.html">Pokemon List</a></li>
+            <li><a  th:href="@{/index}" href="/index.html">Pokemon Cards</a></li>
             <li><a  th:href="@{/create}" href="/create.html">Create Pokemon</a></li>
+            <li><a  th:href="@{/login}" href="/login.html">Login</a></li>
         </ul>
     </div>
-    <table class="deco">
-        <thead id="deco">
-        <th>Pokemon image</th>
-        <th>Pokedex Number</th>
-        <th>Name</th>
-        <th>Speed</th>
-        <th>Special Defence</th>
-        <th>Special Attack</th>
-        <th>Defence</th>
-        <th>Attack</th>
-        <th>Hit Point</th>
-        <th>Primary Type</th>
-        <th>Secondary Type</th>
-        <th>Update Pokemon</th>
-        <th>Delete Pokemon</th>
-        </thead>
 
-        <tbody>
-            <tr th:each="pokemon : ${pokemons}">
-            <td><img th:src="@{'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + ${pokemon.pokedex_number} + '.png'}"></td>
-            <td th:text="${pokemon.pokedex_number}"></td>
-            <td th:text="${pokemon.name}"></td>
-            <td th:text="${pokemon.speed}"></td>
-            <td th:text="${pokemon.special_defence}"></td>
-            <td th:text="${pokemon.special_attack}"></td>
-            <td th:text="${pokemon.defence}"></td>
-            <td th:text="${pokemon.attack}"></td>
-            <td th:text="${pokemon.hp}"></td>
-            <td th:text="${pokemon.primary_type}"></td>
-            <td th:text="${pokemon.secondary_type}"></td>
-            <td>
+    <div class="body-container">
+
+       <div class="pokemoncard" th:each="pokemon : ${pokemons}">
+           <span><img th:src="@{'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + ${pokemon.pokedex_number} + '.png'}"></span><br>
+           <span>Pokedex Number </span><span th:text="${pokemon.pokedex_number}"></span><br>
+           <span>Name </span><span th:text="${pokemon.name}"></span><br>
+            <span>Speed </span><span th:text="${pokemon.speed}"></span><br>
+            <span>Special Defence </span><span th:text="${pokemon.special_defence}"></span><br>
+            <span>Special Attack </span><span th:text="${pokemon.special_attack}"></span><br>
+            <span>Defence </span><span th:text="${pokemon.attack}"></span><br>
+            <span>Attack </span><span th:text="${pokemon.hp}"></span><br>
+            <span>Primary type </span><span th:text="${pokemon.primary_type}"></span><br>
+            <span>Secondary type </span><span th:text="${pokemon.secondary_type}"></span><br>
+            <span>
                 <a th:href="@{'/update/' + ${pokemon.pokedex_number}}" href="/update">Update</a>
-            </td>
-            <td>
+            </span><br>
+            <span>
                 <a th:href="@{'/delete/' + ${pokemon.pokedex_number}}" href="/delete">Delete</a>
-            </td>
-            </tr>
-
-        </tbody>
-
-    </table>
-
+            </span><br>
+       </div>
+    </div>
 </div>
-
 </body>
 </html>
